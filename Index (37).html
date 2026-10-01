@@ -1,1074 +1,2905 @@
 ```html
 <!DOCTYPE html>
 <html lang="id">
+
 <head>
+
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>CEYIN MY BF 💗</title>
+
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+
+<title>01 OKTOBER — MY GIRL ❤️</title>
 
 <style>
+
+/* =====================================================
+   RESET
+===================================================== */
+
 *{
-    box-sizing:border-box;
     margin:0;
     padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
 }
 
 body{
-    font-family:"Segoe UI",Arial,sans-serif;
-    min-height:100vh;
-    overflow:hidden;
-    background:
-        radial-gradient(circle at 20% 20%,#ff70b7,transparent 30%),
-        radial-gradient(circle at 80% 80%,#a94dff,transparent 30%),
-        linear-gradient(135deg,#18091d,#421337,#160817);
+    font-family:
+    Arial,
+    Helvetica,
+    sans-serif;
+
+    background:#050006;
     color:white;
+
+    overflow:hidden;
 }
 
-/* ================= BACKGROUND ================= */
+/* =====================================================
+   BACKGROUND GLOW
+===================================================== */
 
-.bg-heart{
+body::before{
+    content:"";
+
     position:fixed;
-    bottom:-60px;
-    pointer-events:none;
-    animation:floatHeart linear forwards;
-    z-index:1;
+    inset:-50%;
+
+    background:
+    radial-gradient(
+        circle at 20% 20%,
+        rgba(255,0,120,.25),
+        transparent 25%
+    ),
+
+    radial-gradient(
+        circle at 80% 30%,
+        rgba(255,70,170,.20),
+        transparent 25%
+    ),
+
+    radial-gradient(
+        circle at 50% 90%,
+        rgba(170,0,100,.20),
+        transparent 30%
+    );
+
+    animation:
+    backgroundMove
+    12s
+    ease-in-out
+    infinite
+    alternate;
+
+    z-index:-20;
 }
 
-@keyframes floatHeart{
+@keyframes backgroundMove{
+
     0%{
-        transform:translateY(0) scale(.4) rotate(0);
-        opacity:0;
+        transform:
+        translate(0,0)
+        scale(1);
     }
-    15%{opacity:1}
+
+    50%{
+        transform:
+        translate(4%,3%)
+        scale(1.08);
+    }
+
     100%{
-        transform:translateY(-110vh) scale(1.4) rotate(360deg);
-        opacity:0;
+        transform:
+        translate(-4%,-3%)
+        scale(1);
     }
 }
 
-/* ================= PAGE ================= */
+/* =====================================================
+   STARS
+===================================================== */
 
-.page{
+.stars{
     position:fixed;
     inset:0;
-    padding:20px;
-    display:flex;
-    justify-content:center;
-    align-items:center;
+    z-index:-15;
 
-    opacity:0;
+    background-image:
+    radial-gradient(
+        white 1px,
+        transparent 1px
+    );
+
+    background-size:45px 45px;
+
+    opacity:.20;
+
+    animation:
+    starsMove
+    25s
+    linear
+    infinite;
+}
+
+@keyframes starsMove{
+
+    from{
+        transform:translateY(0);
+    }
+
+    to{
+        transform:translateY(45px);
+    }
+}
+
+/* =====================================================
+   BACKGROUND FLOWERS
+===================================================== */
+
+.flower-background{
+    position:fixed;
+    inset:0;
+
+    overflow:hidden;
     pointer-events:none;
 
-    transform:translateX(100%) scale(.9);
+    z-index:-10;
+}
 
-    transition:
-        transform .8s cubic-bezier(.77,0,.18,1),
-        opacity .5s ease;
+.bg-flower{
+    position:absolute;
 
-    z-index:5;
-    overflow-y:auto;
+    bottom:-80px;
+
+    font-size:45px;
+
+    opacity:.5;
+
+    filter:
+    drop-shadow(
+        0 0 15px
+        rgba(255,50,150,.8)
+    );
+
+    animation:
+    flowerUp
+    linear
+    infinite;
+}
+
+@keyframes flowerUp{
+
+    0%{
+        transform:
+        translateY(110vh)
+        translateX(0)
+        rotate(0)
+        scale(.6);
+
+        opacity:0;
+    }
+
+    10%{
+        opacity:.6;
+    }
+
+    50%{
+        transform:
+        translateY(50vh)
+        translateX(60px)
+        rotate(180deg)
+        scale(1);
+    }
+
+    100%{
+        transform:
+        translateY(-120vh)
+        translateX(-70px)
+        rotate(360deg)
+        scale(.8);
+
+        opacity:0;
+    }
+}
+
+/* =====================================================
+   FLOATING HEART
+===================================================== */
+
+.heart{
+    position:fixed;
+
+    bottom:-40px;
+
+    pointer-events:none;
+
+    z-index:25;
+
+    animation:
+    heartFloat
+    linear
+    forwards;
+}
+
+@keyframes heartFloat{
+
+    0%{
+        transform:
+        translateY(0)
+        rotate(0);
+
+        opacity:0;
+    }
+
+    10%{
+        opacity:1;
+    }
+
+    100%{
+        transform:
+        translateY(-110vh)
+        rotate(360deg);
+
+        opacity:0;
+    }
+}
+
+/* =====================================================
+   FALLING PETAL
+===================================================== */
+
+.petal{
+    position:fixed;
+
+    top:-50px;
+
+    pointer-events:none;
+
+    z-index:30;
+
+    animation:
+    petalFall
+    linear
+    forwards;
+}
+
+@keyframes petalFall{
+
+    0%{
+        transform:
+        translateY(0)
+        translateX(0)
+        rotate(0);
+
+        opacity:0;
+    }
+
+    10%{
+        opacity:.8;
+    }
+
+    50%{
+        transform:
+        translateY(50vh)
+        translateX(80px)
+        rotate(180deg);
+    }
+
+    100%{
+        transform:
+        translateY(110vh)
+        translateX(-100px)
+        rotate(360deg);
+
+        opacity:0;
+    }
+}
+
+/* =====================================================
+   PAGE
+===================================================== */
+
+.page{
+    display:none;
+
+    width:100%;
+    height:100vh;
+
+    padding:30px 20px;
+
+    overflow:auto;
+
+    text-align:center;
+
+    scrollbar-width:none;
+}
+
+.page::-webkit-scrollbar{
+    display:none;
 }
 
 .page.active{
-    opacity:1;
-    pointer-events:auto;
-    transform:translateX(0) scale(1);
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:center;
+    align-items:center;
 }
 
-.page.leave{
-    opacity:0;
-    transform:translateX(-100%) scale(.9);
-}
+/* =====================================================
+   LOGIN
+===================================================== */
 
-/* ================= CARD ================= */
+.login-box{
 
-.card{
-    width:100%;
-    max-width:650px;
-    text-align:center;
+    width:min(950px,96%);
 
-    padding:35px 25px;
+    padding:35px;
 
     border-radius:35px;
 
-    background:rgba(255,255,255,.11);
-    backdrop-filter:blur(20px);
-    -webkit-backdrop-filter:blur(20px);
+    background:
+    rgba(255,255,255,.07);
 
-    border:1px solid rgba(255,255,255,.25);
+    border:
+    1px solid
+    rgba(255,100,180,.35);
+
+    backdrop-filter:
+    blur(20px);
 
     box-shadow:
-        0 25px 80px rgba(0,0,0,.5),
-        inset 0 0 40px rgba(255,255,255,.04);
 
-    animation:cardAppear .8s ease;
+    0 0 50px
+    rgba(255,0,130,.20),
+
+    inset 0 0 40px
+    rgba(255,0,130,.05);
+
+    animation:
+    boxAppear
+    1s
+    ease;
 }
 
-@keyframes cardAppear{
+@keyframes boxAppear{
+
     from{
         opacity:0;
-        transform:translateY(50px) rotateX(20deg);
+
+        transform:
+        translateY(40px)
+        scale(.95);
     }
+
     to{
         opacity:1;
-        transform:translateY(0) rotateX(0);
+
+        transform:
+        translateY(0)
+        scale(1);
     }
 }
 
-h1{
-    font-size:clamp(30px,8vw,50px);
-    color:white;
+/* =====================================================
+   DATE
+===================================================== */
+
+.date{
+
+    color:#ff80bc;
+
+    font-size:
+    clamp(
+        18px,
+        4vw,
+        28px
+    );
+
+    letter-spacing:5px;
+
+    margin-bottom:10px;
+
     text-shadow:
-        0 0 10px #ff4fa3,
-        0 0 30px #ff4fa3,
-        0 0 60px #ff4fa3;
-    margin-bottom:15px;
+    0 0 20px
+    #ff1685;
 }
 
-p{
-    color:#ffe9f5;
-    line-height:1.7;
-    margin:10px 0;
+/* =====================================================
+   TITLE
+===================================================== */
+
+.login-title{
+
+    font-size:
+    clamp(
+        42px,
+        9vw,
+        80px
+    );
+
+    color:white;
+
+    text-shadow:
+
+    0 0 10px
+    #ff268b,
+
+    0 0 30px
+    #ff268b,
+
+    0 0 60px
+    #ff268b;
+
+    margin-bottom:10px;
 }
 
-.love-text{
-    font-size:20px;
+.login-subtitle{
+
+    color:#ffd3e8;
+
+    margin-bottom:25px;
+
+    line-height:1.6;
+}
+
+/* =====================================================
+   MAIN FLOWER
+===================================================== */
+
+.main-flower{
+
+    position:relative;
+
+    width:130px;
+    height:130px;
+
+    margin:
+    0 auto 25px;
+
+    animation:
+    mainFlowerMove
+    4s
+    ease-in-out
+    infinite;
+}
+
+@keyframes mainFlowerMove{
+
+    0%,100%{
+        transform:
+        rotate(-5deg)
+        scale(.95);
+    }
+
+    50%{
+        transform:
+        rotate(5deg)
+        scale(1.08);
+    }
+}
+
+.main-flower span{
+
+    position:absolute;
+
+    width:60px;
+    height:60px;
+
+    border-radius:50%;
+
+    background:
+    radial-gradient(
+        circle,
+        #ffb6d9,
+        #ff2389
+    );
+
+    box-shadow:
+    0 0 25px
+    #ff2389;
+}
+
+.main-flower span:nth-child(1){
+    top:0;
+    left:35px;
+}
+
+.main-flower span:nth-child(2){
+    top:35px;
+    left:0;
+}
+
+.main-flower span:nth-child(3){
+    top:35px;
+    right:0;
+}
+
+.main-flower span:nth-child(4){
+    bottom:0;
+    left:35px;
+}
+
+.main-flower i{
+
+    position:absolute;
+
+    width:42px;
+    height:42px;
+
+    border-radius:50%;
+
+    top:44px;
+    left:44px;
+
+    background:#ffd84d;
+
+    box-shadow:
+    0 0 25px
+    #ffd84d;
+}
+
+/* =====================================================
+   CODE PHOTO
+===================================================== */
+
+.code-title{
+
+    color:#ffe1ef;
+
+    font-size:18px;
+
+    margin-bottom:20px;
+}
+
+.photo-code{
+
+    width:min(700px,100%);
+
+    margin:auto;
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(3,1fr);
+
+    gap:15px;
+}
+
+.code-image{
+
+    height:155px;
+
+    position:relative;
+
+    overflow:hidden;
+
+    border-radius:22px;
+
+    border:
+    2px solid
+    #ff4b9c;
+
+    cursor:pointer;
+
+    transition:.35s;
+
+    box-shadow:
+    0 0 20px
+    rgba(255,30,130,.3);
+}
+
+.code-image img{
+
+    width:100%;
+    height:100%;
+
+    object-fit:cover;
+
+    transition:.5s;
+}
+
+.code-image:hover{
+
+    transform:
+    translateY(-6px)
+    scale(1.05);
+
+    box-shadow:
+    0 0 35px
+    #ff2188;
+}
+
+.code-image:hover img{
+    transform:scale(1.1);
+}
+
+.code-image.selected{
+
+    border:
+    4px solid white;
+
+    box-shadow:
+    0 0 40px
+    #ff238b;
+
+    transform:scale(1.05);
+}
+
+.number{
+
+    position:absolute;
+
+    top:8px;
+    right:8px;
+
+    width:30px;
+    height:30px;
+
+    display:flex;
+
+    justify-content:center;
+    align-items:center;
+
+    border-radius:50%;
+
+    background:#ff1680;
+
     font-weight:bold;
-    color:#ffd2e9;
 }
 
-/* ================= BUTTON ================= */
+.selected-number{
+
+    position:absolute;
+
+    bottom:8px;
+    left:8px;
+
+    padding:
+    5px 12px;
+
+    border-radius:20px;
+
+    background:white;
+
+    color:#ff1680;
+
+    font-weight:bold;
+
+    display:none;
+}
+
+.code-image.selected
+.selected-number{
+    display:block;
+}
+
+/* =====================================================
+   STATUS
+===================================================== */
+
+.status{
+
+    min-height:90px;
+
+    margin-top:20px;
+}
+
+.wrong{
+
+    color:#ff86bb;
+
+    font-size:18px;
+
+    animation:
+    wrongShake
+    .5s
+    infinite;
+}
+
+@keyframes wrongShake{
+
+    0%,100%{
+        transform:translateX(0);
+    }
+
+    25%{
+        transform:translateX(-8px);
+    }
+
+    75%{
+        transform:translateX(8px);
+    }
+}
+
+.correct-code{
+
+    display:flex;
+
+    justify-content:center;
+
+    flex-wrap:wrap;
+
+    gap:8px;
+
+    margin:15px;
+}
+
+.correct-code span{
+
+    background:#ff197e;
+
+    padding:
+    8px 14px;
+
+    border-radius:20px;
+}
+
+/* =====================================================
+   BUTTON
+===================================================== */
 
 button{
-    border:none;
-    border-radius:50px;
 
-    padding:14px 28px;
-    margin:10px 5px;
+    border:none;
+
+    padding:
+    13px 25px;
+
+    border-radius:30px;
+
+    background:
+    linear-gradient(
+        45deg,
+        #ff147c,
+        #ff72b4
+    );
 
     color:white;
+
     font-size:16px;
+
     font-weight:bold;
 
     cursor:pointer;
 
-    background:linear-gradient(90deg,#ff3d9a,#a83cff);
-
     box-shadow:
-        0 8px 30px rgba(255,50,160,.4);
+    0 0 20px
+    rgba(255,30,140,.6);
 
     transition:.3s;
 }
 
 button:hover{
-    transform:translateY(-4px) scale(1.06);
+
+    transform:scale(1.08);
+
     box-shadow:
-        0 12px 40px rgba(255,50,160,.7);
+    0 0 35px
+    #ff238b;
 }
 
-/* ================= QRIS ================= */
+/* =====================================================
+   MEMORY
+===================================================== */
 
-.qris{
-    width:280px;
-    max-width:90%;
+.memory-date{
 
-    padding:12px;
-    background:white;
+    color:#ff90c6;
+
+    letter-spacing:5px;
+
+    margin-bottom:8px;
+}
+
+.memory-title{
+
+    font-size:
+    clamp(
+        32px,
+        7vw,
+        58px
+    );
+
+    color:#ff91c6;
+
+    text-shadow:
+    0 0 20px
+    #ff1685;
+
+    margin-bottom:10px;
+}
+
+.memory-subtitle{
+
+    color:#ffd0e5;
+
+    margin-bottom:30px;
+}
+
+.memory-grid{
+
+    width:min(1050px,95%);
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(3,1fr);
+
+    gap:18px;
+}
+
+.memory-card{
+
+    min-height:180px;
+
+    padding:20px;
 
     border-radius:25px;
 
-    margin:20px auto;
+    background:
+    rgba(255,255,255,.07);
 
-    display:block;
-
-    box-shadow:
-        0 0 25px white,
-        0 0 60px #ff4fa3;
-
-    animation:qrisMove 3s infinite ease-in-out;
-}
-
-@keyframes qrisMove{
-    0%,100%{
-        transform:translateY(0) rotate(-1deg);
-    }
-    50%{
-        transform:translateY(-12px) rotate(1deg);
-    }
-}
-
-/* ================= INPUT ================= */
-
-input{
-    width:90%;
-    max-width:350px;
-
-    padding:16px;
-
-    border:none;
-    outline:none;
-
-    border-radius:50px;
-
-    text-align:center;
-
-    font-size:17px;
-
-    color:#7d2458;
-
-    background:white;
+    border:
+    1px solid
+    rgba(255,100,180,.4);
 
     box-shadow:
-        0 0 25px rgba(255,70,170,.5);
+    0 0 20px
+    rgba(255,30,130,.15);
+
+    cursor:pointer;
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:center;
+    align-items:center;
+
+    transition:.4s;
+
+    backdrop-filter:blur(10px);
 }
 
-/* =================================================
-   KUCING LANGSUNG DARI EMOJI
-================================================= */
+.memory-card:hover{
 
-.cat{
-    font-size:150px;
-    line-height:1;
+    transform:
+    translateY(-10px)
+    scale(1.04)
+    rotate(-1deg);
 
-    margin:25px auto;
-
-    display:block;
-
-    filter:
-        drop-shadow(0 15px 20px rgba(0,0,0,.3))
-        drop-shadow(0 0 25px #ff6bb5);
-
-    animation:catMove 1.8s infinite ease-in-out;
+    box-shadow:
+    0 0 35px
+    #ff2389;
 }
 
-@keyframes catMove{
+.memory-icon{
+
+    font-size:55px;
+
+    margin-bottom:10px;
+
+    animation:
+    flowerSway
+    3s
+    ease-in-out
+    infinite;
+}
+
+@keyframes flowerSway{
+
     0%,100%{
-        transform:
-            translateY(0)
-            rotate(-5deg)
-            scale(1);
+        transform:rotate(-5deg);
     }
 
     50%{
         transform:
-            translateY(-18px)
-            rotate(5deg)
-            scale(1.08);
+        rotate(5deg)
+        translateY(-6px);
     }
 }
 
-/* KUCING KESEL */
-.angry-cat{
-    font-size:150px;
+.memory-card h3{
+
+    color:#ff9dca;
+
+    margin-bottom:5px;
+}
+
+.memory-card p{
+
+    color:#ffd8e8;
+
+    font-size:13px;
+}
+
+/* =====================================================
+   MODAL
+===================================================== */
+
+.modal{
+
+    position:fixed;
+
+    inset:0;
+
+    background:
+    rgba(0,0,0,.9);
+
+    display:none;
+
+    justify-content:center;
+    align-items:center;
+
+    padding:20px;
+
+    z-index:100;
+}
+
+.modal.active{
+    display:flex;
+}
+
+.modal-box{
+
+    width:min(520px,95%);
+
+    max-height:90vh;
+
+    overflow:auto;
+
+    padding:22px;
+
+    border-radius:30px;
+
+    background:
+    linear-gradient(
+        145deg,
+        #19000f,
+        #080005
+    );
+
+    border:
+    2px solid
+    #ff3b96;
+
+    box-shadow:
+    0 0 60px
+    #ff1685;
+
     animation:
-        angry 0.35s infinite alternate,
-        angryJump 1.5s infinite;
+    modalPop
+    .5s
+    ease;
 }
 
-@keyframes angry{
-    from{transform:rotate(-8deg)}
-    to{transform:rotate(8deg)}
-}
+@keyframes modalPop{
 
-@keyframes angryJump{
-    0%,100%{translate:0 0}
-    50%{translate:0 -15px}
-}
+    from{
+        transform:
+        scale(.5)
+        rotate(-5deg);
 
-/* KUCING SENYUM */
-.happy-cat{
-    font-size:150px;
-    animation:
-        happy 2s infinite ease-in-out;
-}
-
-@keyframes happy{
-    0%,100%{
-        transform:translateY(0) scale(1);
+        opacity:0;
     }
-    50%{
-        transform:translateY(-20px) scale(1.1);
+
+    to{
+        transform:
+        scale(1)
+        rotate(0);
+
+        opacity:1;
     }
 }
 
-/* ================= FOTO ================= */
+.modal-box img{
 
-.photo{
     width:100%;
-    max-height:500px;
+
+    max-height:380px;
+
     object-fit:cover;
 
-    border-radius:25px;
+    border-radius:20px;
 
-    border:7px solid white;
+    margin-bottom:15px;
+}
+
+.modal-box h2{
+
+    color:#ff87be;
+
+    margin-bottom:12px;
+}
+
+.modal-box p{
+
+    color:#ffe0ec;
+
+    line-height:1.8;
+
+    margin-bottom:20px;
+}
+
+/* =====================================================
+   FINAL SLIDE
+===================================================== */
+
+.final-page{
+
+    position:relative;
+
+    overflow:hidden;
+}
+
+.final-flower{
+
+    font-size:
+    clamp(
+        80px,
+        16vw,
+        150px
+    );
+
+    animation:
+    finalFlower
+    3s
+    ease-in-out
+    infinite;
+
+    filter:
+    drop-shadow(
+        0 0 30px
+        #ff2994
+    );
+}
+
+@keyframes finalFlower{
+
+    0%,100%{
+        transform:
+        scale(.9)
+        rotate(-6deg);
+    }
+
+    50%{
+        transform:
+        scale(1.12)
+        rotate(6deg);
+    }
+}
+
+.final-date{
+
+    color:#ff91c7;
+
+    font-size:20px;
+
+    letter-spacing:7px;
+
+    margin-bottom:8px;
+}
+
+.slide-number{
+
+    color:#ffcadd;
+
+    opacity:.8;
+
+    margin-bottom:10px;
+}
+
+.final-title{
+
+    font-size:
+    clamp(
+        42px,
+        10vw,
+        85px
+    );
+
+    text-shadow:
+
+    0 0 15px
+    #ff1685,
+
+    0 0 40px
+    #ff1685,
+
+    0 0 70px
+    #ff1685;
+}
+
+.shake-word{
+
+    margin-top:25px;
+
+    min-height:55px;
+
+    font-size:
+    clamp(
+        21px,
+        5vw,
+        40px
+    );
+
+    font-weight:bold;
+
+    color:#ff91c5;
+
+    text-shadow:
+    0 0 15px
+    #ff2188;
+
+    animation:
+    shakeWord
+    .45s
+    infinite;
+}
+
+@keyframes shakeWord{
+
+    0%{
+        transform:
+        translateX(0)
+        rotate(0);
+    }
+
+    20%{
+        transform:
+        translateX(-10px)
+        rotate(-2deg);
+    }
+
+    40%{
+        transform:
+        translateX(10px)
+        rotate(2deg);
+    }
+
+    60%{
+        transform:
+        translateX(-7px)
+        rotate(-1deg);
+    }
+
+    80%{
+        transform:
+        translateX(7px)
+        rotate(1deg);
+    }
+
+    100%{
+        transform:
+        translateX(0)
+        rotate(0);
+    }
+}
+
+.final-text{
+
+    width:min(650px,90%);
+
+    margin-top:20px;
+
+    color:#ffe0ed;
+
+    line-height:1.8;
+
+    font-size:16px;
+}
+
+.final-buttons{
+
+    display:flex;
+
+    justify-content:center;
+
+    gap:12px;
+
+    margin-top:25px;
+}
+
+.final-buttons button{
+
+    min-width:60px;
+    min-height:45px;
+}
+
+/* =====================================================
+   DOTS
+===================================================== */
+
+.slide-dots{
+
+    display:flex;
+
+    justify-content:center;
+
+    gap:8px;
+
+    margin-top:20px;
+}
+
+.slide-dot{
+
+    width:9px;
+    height:9px;
+
+    border-radius:50%;
+
+    background:
+    rgba(255,255,255,.3);
+
+    transition:.3s;
+
+    cursor:pointer;
+}
+
+.slide-dot.active{
+
+    width:27px;
+
+    border-radius:20px;
+
+    background:#ff4c9e;
 
     box-shadow:
-        0 20px 50px rgba(0,0,0,.45),
-        0 0 30px rgba(255,70,170,.35);
-
-    transition:.5s;
+    0 0 15px
+    #ff1685;
 }
 
-.photo:hover{
-    transform:scale(1.03) rotate(1deg);
+/* =====================================================
+   FOTO PENUTUP
+===================================================== */
+
+#lastPhoto{
+
+    width:min(650px,95%);
+
+    animation:
+    closingAppear
+    1.2s
+    ease;
 }
 
-/* ================= SLIDE ================= */
+.closing-title{
 
-.photoSlide{
-    display:none;
+    font-size:
+    clamp(
+        38px,
+        8vw,
+        70px
+    );
+
+    color:#ff91c7;
+
+    text-shadow:
+    0 0 15px #ff1685,
+    0 0 40px #ff1685;
+
+    margin-bottom:20px;
 }
 
-.photoSlide.active{
+.closing-photo{
+
+    width:min(450px,90vw);
+
+    margin:0 auto 25px;
+
+    padding:9px;
+
+    border-radius:30px;
+
+    background:
+    linear-gradient(
+        135deg,
+        #ff1685,
+        #ff8ac4,
+        white,
+        #ff1685
+    );
+
+    box-shadow:
+    0 0 30px #ff1685,
+    0 0 70px rgba(255,20,130,.5);
+
+    animation:
+    closingPhoto
+    2.5s
+    ease-in-out
+    infinite
+    alternate;
+}
+
+.closing-photo img{
+
+    width:100%;
+
+    height:min(500px,55vh);
+
+    object-fit:cover;
+
     display:block;
-    animation:photoSlide .8s cubic-bezier(.2,.8,.2,1);
+
+    border-radius:22px;
 }
 
-@keyframes photoSlide{
+.closing-text{
+
+    width:min(650px,90%);
+
+    margin:10px auto 25px;
+
+    color:#ffe0ed;
+
+    line-height:1.8;
+
+    font-size:16px;
+}
+
+@keyframes closingPhoto{
+
+    from{
+        transform:
+        scale(.97)
+        rotate(-1deg);
+    }
+
+    to{
+        transform:
+        scale(1.03)
+        rotate(1deg);
+    }
+}
+
+@keyframes closingAppear{
+
     from{
         opacity:0;
         transform:
-            translateX(100px)
-            rotate(5deg)
-            scale(.85);
+        translateY(40px)
+        scale(.9);
     }
 
     to{
         opacity:1;
         transform:
-            translateX(0)
-            rotate(0)
-            scale(1);
+        translateY(0)
+        scale(1);
     }
 }
 
-/* ================= DOT ================= */
+/* =====================================================
+   MOBILE
+===================================================== */
 
-.dots{
-    display:flex;
-    justify-content:center;
-    gap:7px;
-    margin:20px;
-}
+@media(max-width:700px){
 
-.dot{
-    width:9px;
-    height:9px;
-    border-radius:50%;
-    background:#ffffff55;
-    transition:.3s;
-}
-
-.dot.active{
-    width:30px;
-    background:#ff62ad;
-    box-shadow:0 0 15px #ff62ad;
-}
-
-/* =================================================
-   PELUKAN
-================================================= */
-
-.hug{
-    font-size:130px;
-    margin:20px;
-
-    animation:hug 2s infinite ease-in-out;
-}
-
-@keyframes hug{
-    0%,100%{
-        transform:scale(1);
-    }
-    50%{
-        transform:scale(1.15);
-    }
-}
-
-/* =================================================
-   BONEKA + BUNGA
-================================================= */
-
-.doll{
-    font-size:130px;
-    margin:20px;
-
-    animation:dollMove 2.5s infinite ease-in-out;
-
-    filter:
-        drop-shadow(0 15px 20px rgba(0,0,0,.3))
-        drop-shadow(0 0 25px #ff5dac);
-}
-
-@keyframes dollMove{
-    0%,100%{
-        transform:rotate(-5deg) translateY(0);
+    .login-box{
+        padding:25px 15px;
     }
 
-    50%{
-        transform:rotate(5deg) translateY(-15px);
+    .photo-code{
+        grid-template-columns:
+        repeat(2,1fr);
+
+        gap:10px;
+    }
+
+    .code-image{
+        height:125px;
+    }
+
+    .memory-grid{
+        grid-template-columns:
+        repeat(2,1fr);
+
+        gap:12px;
+    }
+
+    .memory-card{
+        min-height:145px;
+        padding:12px;
+    }
+
+    .memory-icon{
+        font-size:42px;
+    }
+
+    .closing-photo img{
+        height:430px;
     }
 }
 
-.flower{
-    display:inline-block;
-    animation:flower 1s infinite alternate;
-}
+@media(max-width:430px){
 
-@keyframes flower{
-    from{transform:rotate(-10deg)}
-    to{transform:rotate(10deg)}
-}
+    .login-title{
+        font-size:42px;
+    }
 
-/* ================= JANGAN TINGGALIN ================= */
+    .code-image{
+        height:110px;
+    }
 
-.big-love{
-    font-size:clamp(28px,7vw,45px);
-    font-weight:bold;
+    .memory-card h3{
+        font-size:14px;
+    }
 
-    color:white;
-
-    text-shadow:
-        0 0 10px #ff3d9a,
-        0 0 30px #ff3d9a,
-        0 0 60px #ff3d9a;
-
-    animation:pulse 1.2s infinite;
-}
-
-@keyframes pulse{
-    50%{
-        transform:scale(1.08);
+    .closing-photo img{
+        height:380px;
     }
 }
 
-/* ================= MUSIC ================= */
-
-audio{
-    width:100%;
-    margin-top:25px;
-}
-
-/* ================= MOBILE ================= */
-
-@media(max-width:500px){
-
-    .card{
-        padding:28px 17px;
-    }
-
-    .cat{
-        font-size:110px;
-    }
-
-    .hug{
-        font-size:100px;
-    }
-
-    .doll{
-        font-size:100px;
-    }
-}
 </style>
-</head>
 
+</head>
 
 <body>
 
+<!-- =====================================================
+     BACKGROUND
+===================================================== -->
 
-<!-- =================================================
-     QRIS
-================================================= -->
+<div class="stars"></div>
 
-<section id="qrisPage" class="page active">
+<div class="flower-background">
 
-<div class="card">
+    <div class="bg-flower"
+    style="left:3%;animation-duration:14s;animation-delay:0s;">
+        🌸
+    </div>
 
-<h1>💗 CEYIN MY BF 💗</h1>
+    <div class="bg-flower"
+    style="left:17%;animation-duration:18s;animation-delay:3s;">
+        🌷
+    </div>
 
-<p class="love-text">
-Welcome to our little world 🥺💕
-</p>
+    <div class="bg-flower"
+    style="left:31%;animation-duration:15s;animation-delay:6s;">
+        🌹
+    </div>
 
-<p>
-Scan dulu QRIS-nya ya sayang 😚
-</p>
+    <div class="bg-flower"
+    style="left:46%;animation-duration:20s;animation-delay:2s;">
+        🌺
+    </div>
 
-<img
-src="ucing.jpeg"
-class="qris"
-alt="QRIS"
+    <div class="bg-flower"
+    style="left:61%;animation-duration:16s;animation-delay:5s;">
+        🌸
+    </div>
+
+    <div class="bg-flower"
+    style="left:76%;animation-duration:19s;animation-delay:1s;">
+        🌷
+    </div>
+
+    <div class="bg-flower"
+    style="left:91%;animation-duration:17s;animation-delay:4s;">
+        🌹
+    </div>
+
+</div>
+
+
+<!-- =====================================================
+     LOGIN
+===================================================== -->
+
+<section
+id="loginPage"
+class="page active"
 >
 
-<button onclick="goTo('kodePage')">
-SUDAH SCAN 💗
-</button>
+<div class="login-box">
+
+    <div class="date">
+        01 • OKTOBER • MY GIRL
+    </div>
+
+    <h1 class="login-title">
+        MY GIRL ❤️
+    </h1>
+
+    <p class="login-subtitle">
+        Hari kecil untuk seseorang
+        yang sangat berarti bagiku 🌸
+    </p>
+
+    <div class="main-flower">
+
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+
+        <i></i>
+
+    </div>
+
+    <div class="code-title">
+        🔐 Pilih 4 foto sesuai
+        urutan kode rahasia ❤️
+    </div>
+
+    <div class="photo-code">
+
+        <div
+        class="code-image"
+        data-code="foto1"
+        onclick="chooseCode(this)"
+        >
+
+            <img src="foto1.jpg"
+            alt="Foto 1">
+
+            <div class="number">
+                1
+            </div>
+
+            <div class="selected-number"></div>
+
+        </div>
+
+
+        <div
+        class="code-image"
+        data-code="foto2"
+        onclick="chooseCode(this)"
+        >
+
+            <img src="foto2.jpg"
+            alt="Foto 2">
+
+            <div class="number">
+                2
+            </div>
+
+            <div class="selected-number"></div>
+
+        </div>
+
+
+        <div
+        class="code-image"
+        data-code="foto3"
+        onclick="chooseCode(this)"
+        >
+
+            <img src="foto3.jpg"
+            alt="Foto 3">
+
+            <div class="number">
+                3
+            </div>
+
+            <div class="selected-number"></div>
+
+        </div>
+
+
+        <div
+        class="code-image"
+        data-code="foto4"
+        onclick="chooseCode(this)"
+        >
+
+            <img src="foto4.jpg"
+            alt="Foto 4">
+
+            <div class="number">
+                4
+            </div>
+
+            <div class="selected-number"></div>
+
+        </div>
+
+
+        <div
+        class="code-image"
+        data-code="foto5"
+        onclick="chooseCode(this)"
+        >
+
+            <img src="foto5.jpg"
+            alt="Foto 5">
+
+            <div class="number">
+                5
+            </div>
+
+            <div class="selected-number"></div>
+
+        </div>
+
+
+        <div
+        class="code-image"
+        data-code="foto6"
+        onclick="chooseCode(this)"
+        >
+
+            <img src="foto6.jpg"
+            alt="Foto 6">
+
+            <div class="number">
+                6
+            </div>
+
+            <div class="selected-number"></div>
+
+        </div>
+
+    </div>
+
+    <div
+    id="status"
+    class="status">
+    </div>
 
 </div>
 
 </section>
 
 
-<!-- =================================================
-     KODE
-================================================= -->
+<!-- =====================================================
+     MEMORY PAGE
+===================================================== -->
 
-<section id="kodePage" class="page">
-
-<div class="card">
-
-<h1>🔐 KODE RAHASIA</h1>
-
-<p class="love-text">
-Masukkan kode rahasia untuk masuk 💕
-</p>
-
-<input
-id="password"
-type="password"
-placeholder="Kode rahasia..."
+<section
+id="memoryPage"
+class="page"
 >
 
-<br>
+    <div class="memory-date">
+        🌸 01 OKTOBER 🌸
+    </div>
 
-<button onclick="cekPassword()">
-MASUK ❤️
-</button>
+    <h1 class="memory-title">
+        BUNGA KENANGAN KITA
+    </h1>
 
-</div>
+    <p class="memory-subtitle">
+        Klik setiap bunga untuk membuka
+        cerita kecil kita ❤️
+    </p>
+
+    <div class="memory-grid">
+
+        <div
+        class="memory-card"
+        onclick="openMemory(0)"
+        >
+            <div class="memory-icon">
+                🌸
+            </div>
+
+            <h3>
+                Awal Cerita
+            </h3>
+
+            <p>
+                Awal dari semuanya
+            </p>
+        </div>
+
+
+        <div
+        class="memory-card"
+        onclick="openMemory(1)"
+        >
+            <div class="memory-icon">
+                🌷
+            </div>
+
+            <h3>
+                Senyummu
+            </h3>
+
+            <p>
+                Yang selalu aku suka
+            </p>
+        </div>
+
+
+        <div
+        class="memory-card"
+        onclick="openMemory(2)"
+        >
+            <div class="memory-icon">
+                🌹
+            </div>
+
+            <h3>
+                Favoritku
+            </h3>
+
+            <p>
+                Kamu nomor satu
+            </p>
+        </div>
+
+
+        <div
+        class="memory-card"
+        onclick="openMemory(3)"
+        >
+            <div class="memory-icon">
+                🌺
+            </div>
+
+            <h3>
+                Moment Kita
+            </h3>
+
+            <p>
+                Tidak terlupakan
+            </p>
+        </div>
+
+
+        <div
+        class="memory-card"
+        onclick="openMemory(4)"
+        >
+            <div class="memory-icon">
+                🌻
+            </div>
+
+            <h3>
+                Bahagia
+            </h3>
+
+            <p>
+                Saat bersama kamu
+            </p>
+        </div>
+
+
+        <div
+        class="memory-card"
+        onclick="openMemory(5)"
+        >
+            <div class="memory-icon">
+                🌼
+            </div>
+
+            <h3>
+                Kesayanganku
+            </h3>
+
+            <p>
+                Kamu yang aku pilih
+            </p>
+        </div>
+
+
+        <div
+        class="memory-card"
+        onclick="openMemory(6)"
+        >
+            <div class="memory-icon">
+                💐
+            </div>
+
+            <h3>
+                Untukmu
+            </h3>
+
+            <p>
+                Hadiah kecil dariku
+            </p>
+        </div>
+
+
+        <div
+        class="memory-card"
+        onclick="openMemory(7)"
+        >
+            <div class="memory-icon">
+                🌸
+            </div>
+
+            <h3>
+                Selamanya
+            </h3>
+
+            <p>
+                Harapan kecilku
+            </p>
+        </div>
+
+
+        <div
+        class="memory-card"
+        onclick="openMemory(8)"
+        >
+            <div class="memory-icon">
+                ❤️
+            </div>
+
+            <h3>
+                Kejutan
+            </h3>
+
+            <p>
+                Buka yang terakhir
+            </p>
+        </div>
+
+    </div>
+
+    <br>
+
+    <button onclick="openClosing()">
+        💌 BUKA PESAN TERAKHIR
+    </button>
 
 </section>
 
 
-<!-- =================================================
-     SALAH
-================================================= -->
-
-<section id="salahPage" class="page">
-
-<div class="card">
-
-<h1>😾 SALAHHH!</h1>
-
-<div class="cat angry-cat">
-😾
-</div>
-
-<p class="love-text">
-KOK SALAH SIHHH 😾💢
-</p>
-
-<p>
-Kucingnya sampai kesel nih!
-</p>
-
-<button onclick="goTo('kodePage')">
-COBA LAGI 🔐
-</button>
-
-</div>
-
-</section>
-
-
-<!-- =================================================
-     BENAR
-================================================= -->
-
-<section id="benarPage" class="page">
-
-<div class="card">
-
-<h1>🥰 BENARRR!</h1>
-
-<div class="cat happy-cat">
-😽
-</div>
-
-<div class="love-text">
-Silahkan masuk sayang 💗
-</div>
-
-<p>
-Aku sudah menunggu kamu di sini 🥺💕
-</p>
-
-<button onclick="goTo('fotoPage')">
-MASUK 💕
-</button>
-
-</div>
-
-</section>
-
-
-<!-- =================================================
-     4 FOTO
-================================================= -->
-
-<section id="fotoPage" class="page">
-
-<div class="card">
-
-<h1>💞 OUR STORY</h1>
-
-<p>
-Geser satu-satu ya sayang ❤️
-</p>
-
-<div class="dots">
-
-<span class="dot active"></span>
-<span class="dot"></span>
-<span class="dot"></span>
-<span class="dot"></span>
-
-</div>
-
-
-<div class="photoSlide active">
-
-<img src="kyy.jpg.jpeg" class="photo">
-
-<p class="love-text">
-“Bertemu denganmu adalah salah satu hal terindah dalam hidupku.” 💗
-</p>
-
-</div>
-
-
-<div class="photoSlide">
-
-<img src="httpsi.imgur.comG8N9ARA.jpeg.jpeg" class="photo">
-
-<p class="love-text">
-“Kalau harus memilih lagi, aku tetap memilih kamu.” ❤️
-</p>
-
-</div>
-
-
-<div class="photoSlide">
-
-<img src="WhatsApp Image 2026-09-16 at 20.14.41.jpeg" class="photo">
-
-<p class="love-text">
-“Hal sederhana bersamamu selalu menjadi kenangan luar biasa.” 💕
-</p>
-
-</div>
-
-
-<div class="photoSlide">
-
-<img src="ki.jpeg" class="photo">
-
-<p class="love-text">
-“Semoga cerita kita terus berlanjut selamanya.” 💖
-</p>
-
-</div>
-
-
-<button onclick="nextPhoto()">
-GESER ➜ 💗
-</button>
-
-</div>
-
-</section>
-
-
-<!-- =================================================
-     PELUK
-================================================= -->
-
-<section id="pelukPage" class="page">
-
-<div class="card">
-
-<h1>🫂 SINI SAYANG</h1>
-
-<div class="hug">
-🐱💗🐱
-</div>
-
-<div class="love-text">
-Mau dipeluk? 🥺
-</div>
-
-<p>
-Sini... aku peluk dulu.
-Jangan pergi ke mana-mana ya. 🫂❤️
-</p>
-
-<button onclick="goTo('momenPage')">
-PELUK DULU 🫂
-</button>
-
-</div>
-
-</section>
-
-
-<!-- =================================================
-     MOMEN
-================================================= -->
-
-<section id="momenPage" class="page">
-
-<div class="card">
-
-<h1>✨ MOMEN TERINDAH</h1>
-
-<img
-src="KIII.jpeg"
-class="photo"
+<!-- =====================================================
+     MODAL MEMORY
+===================================================== -->
+
+<div
+id="modal"
+class="modal"
 >
 
-<p class="love-text">
-“Foto sederhana, tapi kenangannya luar biasa.” ❤️
-</p>
+    <div class="modal-box">
 
-<br>
+        <img
+        id="modalPhoto"
+        src="foto1.jpg"
+        alt="Foto kenangan"
+        >
 
-<img
-src="httpsi.imgur.com5xzz0SF.jpeg.jpeg"
-class="photo"
->
+        <h2
+        id="modalTitle">
+        </h2>
 
-<p class="love-text">
-“Terima kasih sudah membuat hidupku lebih berwarna.” 💕
-</p>
+        <p
+        id="modalText">
+        </p>
 
-<button onclick="goTo('favoritPage')">
-FOTO FAVORIT ➜ 💗
-</button>
+        <button onclick="closeMemory()">
+            Tutup ❤️
+        </button>
+
+    </div>
 
 </div>
+
+
+<!-- =====================================================
+     FINAL PAGE
+===================================================== -->
+
+<section
+id="closingPage"
+class="page final-page"
+>
+
+    <div
+    id="normalFinalContent">
+
+        <div class="final-flower">
+            🌸
+        </div>
+
+        <div class="final-date">
+            01 OKTOBER
+        </div>
+
+        <div
+        id="slideNumber"
+        class="slide-number">
+            1 / 7
+        </div>
+
+        <h1 class="final-title">
+            MY GIRL ❤️
+        </h1>
+
+        <div
+        id="shakeWord"
+        class="shake-word">
+            AKU SAYANG KAMU ❤️
+        </div>
+
+        <p
+        id="finalText"
+        class="final-text">
+            Sesederhana itu.
+            Aku sayang kamu dan ingin
+            kamu selalu tahu itu.
+        </p>
+
+        <div class="final-buttons">
+
+            <button onclick="previousSlide()">
+                ◀
+            </button>
+
+            <button onclick="nextSlide()">
+                NEXT ❤️
+            </button>
+
+        </div>
+
+        <div
+        id="slideDots"
+        class="slide-dots">
+        </div>
+
+    </div>
+
+
+    <!-- =================================================
+         FOTO PENUTUP PALING TERAKHIR
+    ================================================= -->
+
+    <div
+    id="lastPhoto"
+    style="display:none;"
+    >
+
+        <div class="closing-title">
+            TERIMA KASIH ❤️
+        </div>
+
+        <div class="closing-photo">
+
+            <img
+            src="foto-penutup.jpg"
+            alt="Foto penutup"
+            >
+
+        </div>
+
+        <p class="closing-text">
+
+            Terima kasih sudah menjadi
+            bagian terindah dalam ceritaku. ❤️
+
+            <br><br>
+
+            Website kecil ini mungkin sederhana,
+            tetapi dibuat dengan rasa sayang
+            khusus untuk kamu.
+
+            <br><br>
+
+            Semoga foto terakhir ini menjadi
+            salah satu kenangan manis yang
+            selalu kamu ingat. 🌸
+
+        </p>
+
+        <div class="shake-word">
+            AKU SAYANG KAMU ❤️
+        </div>
+
+        <p class="closing-text">
+            01 OKTOBER — MY GIRL DAY 🌹
+        </p>
+
+        <button onclick="restartWebsite()">
+            🔄 ULANGI DARI AWAL
+        </button>
+
+    </div>
 
 </section>
 
 
-<!-- =================================================
-     FOTO FAVORIT
-================================================= -->
+<!-- =====================================================
+     MUSIC
+===================================================== -->
 
-<section id="favoritPage" class="page">
-
-<div class="card">
-
-<h1>💖 FOTO FAVORITKU</h1>
-
-<img
-src="httpsi.imgur.com5xzz0SF.jpeg.jpeg"
-class="photo"
->
-
-<p class="love-text">
-“Dari sekian banyak foto,
-foto ini selalu membuatku tersenyum.” 🥺💗
-</p>
-
-<p>
-Karena di dalamnya ada seseorang
-yang sangat berarti buat aku. ❤️
-</p>
-
-<button onclick="goTo('bonekaPage')">
-MASIH ADA SATU LAGI... 🌹
-</button>
-
-</div>
-
-</section>
-
-
-<!-- =================================================
-     BONEKA
-================================================= -->
-
-<section id="bonekaPage" class="page">
-
-<div class="card">
-
-<h1>🌹 FOR YOU</h1>
-
-<div class="doll">
-🧸<span class="flower">🌹</span>
-</div>
-
-<div class="big-love">
-Jangan tinggalin aku 🥺
-</div>
-
-<p class="love-text">
-Aku mungkin nggak sempurna...
-</p>
-
-<p>
-Tapi aku ingin tetap ada di sampingmu,
-melewati hari baik dan buruk bersama-sama. ❤️
-</p>
-
-<p style="font-size:35px">
-🧸🌹💗🌹🧸
-</p>
-
-<button onclick="goTo('laguPage')">
-TERAKHIR... 🎵
-</button>
-
-</div>
-
-</section>
-
-
-<!-- =================================================
-     LAGU
-================================================= -->
-
-<section id="laguPage" class="page">
-
-<div class="card">
-
-<h1>🎵 OUR SONG</h1>
-
-<div class="love-text">
-Shape of My Heart ❤️
-</div>
-
-<p>
-Untuk kamu yang selalu menjadi bagian
-dari cerita indahku. 🥺💕
-</p>
-
-<audio controls loop>
-
-<source
-src="lagu-utama.mp3.mp3"
-type="audio/mpeg"
->
-
-Browser kamu tidak mendukung audio.
-
+<audio
+id="music"
+src="lagu.mp3"
+loop
+preload="auto">
 </audio>
-
-<br><br>
-
-<p class="big-love">
-I LOVE YOU ❤️
-</p>
-
-<p style="font-size:40px">
-💗🥺🫂💕
-</p>
-
-</div>
-
-</section>
 
 
 <script>
 
-/* =================================================
-   PASSWORD
-================================================= */
+/* =====================================================
+   KODE RAHASIA
+===================================================== */
 
-const correctPassword = "CEYINACUU";
+const correctCode = [
+
+    "foto2",
+    "foto5",
+    "foto1",
+    "foto6"
+
+];
+
+let enteredCode = [];
 
 
-/* =================================================
-   PAGE TRANSITION
-================================================= */
+/* =====================================================
+   PILIH FOTO
+===================================================== */
 
-let currentPage =
-document.querySelector(".page.active");
+function chooseCode(element){
 
+    const code =
+    element.dataset.code;
 
-function goTo(id){
+    if(
+        enteredCode.includes(code)
+    ){
+        return;
+    }
 
-    const nextPage =
-    document.getElementById(id);
+    enteredCode.push(code);
 
-    if(!nextPage) return;
+    element.classList.add(
+        "selected"
+    );
 
-    currentPage.classList.add("leave");
+    element.querySelector(
+        ".selected-number"
+    ).textContent =
+    enteredCode.length;
 
-    setTimeout(()=>{
-
-        currentPage.classList.remove("active");
-        currentPage.classList.remove("leave");
-
-        nextPage.classList.add("active");
-
-        currentPage = nextPage;
-
-    },400);
+    if(
+        enteredCode.length ===
+        correctCode.length
+    ){
+        checkCode();
+    }
 
 }
 
 
-/* =================================================
-   PASSWORD
-================================================= */
+/* =====================================================
+   CEK KODE
+===================================================== */
 
-function cekPassword(){
+function checkCode(){
 
-    const input =
-    document.getElementById("password").value;
+    const benar =
+    enteredCode.every(
+        (value,index)=>
+        value === correctCode[index]
+    );
 
-    if(input === correctPassword){
+    const status =
+    document.getElementById(
+        "status"
+    );
 
-        goTo("benarPage");
 
-    }else{
+    if(benar){
 
-        goTo("salahPage");
+        status.innerHTML = `
+
+            <div
+            style="
+            color:#ff91c5;
+            font-size:23px;
+            animation:boxAppear .7s;
+            "
+            >
+
+                🌸 KODE BENAR 🌸
+
+                <br><br>
+
+                Selamat datang,
+                My Girl ❤️
+
+            </div>
+
+        `;
+
+        startMusic();
+
+        setTimeout(()=>{
+
+            document
+            .getElementById(
+                "loginPage"
+            )
+            .classList.remove(
+                "active"
+            );
+
+            document
+            .getElementById(
+                "memoryPage"
+            )
+            .classList.add(
+                "active"
+            );
+
+        },1200);
+
+    }
+
+    else{
+
+        status.innerHTML = `
+
+        <div class="wrong">
+
+            😾💢 KODE SALAH 💢😾
+
+            <br><br>
+
+            Aku kasih tahu
+            kode yang benar ❤️
+
+            <br><br>
+
+            <b>
+                URUTANNYA:
+            </b>
+
+            <div class="correct-code">
+
+                ${correctCode.map(
+                    (x,i)=>
+                    `<span>
+                    ${i+1}.
+                    FOTO ${x.replace("foto","")}
+                    </span>`
+                ).join("")}
+
+            </div>
+
+            <button
+            onclick="resetCode()"
+            >
+
+                🔄 COBA LAGI
+
+            </button>
+
+        </div>
+
+        `;
 
     }
 
 }
 
 
-/* ENTER UNTUK LOGIN */
+/* =====================================================
+   RESET KODE
+===================================================== */
 
-document
-.getElementById("password")
-.addEventListener("keydown",function(e){
+function resetCode(){
 
-    if(e.key === "Enter"){
-        cekPassword();
+    enteredCode=[];
+
+    document
+    .querySelectorAll(
+        ".code-image"
+    )
+    .forEach(card=>{
+
+        card.classList.remove(
+            "selected"
+        );
+
+        card.querySelector(
+            ".selected-number"
+        ).textContent="";
+
+    });
+
+    document
+    .getElementById(
+        "status"
+    )
+    .innerHTML="";
+
+}
+
+
+/* =====================================================
+   MUSIC
+===================================================== */
+
+function startMusic(){
+
+    const music =
+    document.getElementById(
+        "music"
+    );
+
+    music.volume=.7;
+
+    music.play().catch(()=>{
+
+        console.log(
+            "Browser menunggu interaksi."
+        );
+
+    });
+
+}
+
+
+/* =====================================================
+   9 KENANGAN
+===================================================== */
+
+const memories=[
+
+    {
+        title:
+        "🌸 Awal Cerita",
+
+        photo:
+        "foto1.jpg",
+
+        text:
+        "Semua cerita yang indah selalu punya sebuah awal. Aku senang karena salah satu cerita itu adalah tentang kita."
+    },
+
+    {
+        title:
+        "🌷 Senyummu",
+
+        photo:
+        "foto2.jpg",
+
+        text:
+        "Senyummu adalah salah satu hal sederhana yang selalu berhasil membuat hariku terasa lebih indah."
+    },
+
+    {
+        title:
+        "🌹 Favoritku",
+
+        photo:
+        "foto3.jpg",
+
+        text:
+        "Banyak hal yang aku suka, tapi kamu tetap punya tempat yang berbeda di hatiku."
+    },
+
+    {
+        title:
+        "🌺 Moment Kita",
+
+        photo:
+        "foto4.jpg",
+
+        text:
+        "Beberapa moment mungkin terlihat sederhana, tetapi menjadi sangat berarti ketika dilakukan bersamamu."
+    },
+
+    {
+        title:
+        "🌻 Bahagia",
+
+        photo:
+        "foto5.jpg",
+
+        text:
+        "Bahagia tidak selalu membutuhkan sesuatu yang besar. Kadang cukup dengan seseorang yang kita sayangi."
+    },
+
+    {
+        title:
+        "🌼 Kesayanganku",
+
+        photo:
+        "foto6.jpg",
+
+        text:
+        "Aku ingin kamu tahu bahwa kamu adalah seseorang yang sangat berarti bagiku."
+    },
+
+    {
+        title:
+        "💐 Untukmu",
+
+        photo:
+        "foto1.jpg",
+
+        text:
+        "Website kecil ini adalah hadiah sederhana dariku untuk seseorang yang spesial."
+    },
+
+    {
+        title:
+        "🌸 Selamanya",
+
+        photo:
+        "foto2.jpg",
+
+        text:
+        "Semoga setelah hari ini masih ada banyak cerita dan kenangan yang bisa kita buat bersama."
+    },
+
+    {
+        title:
+        "❤️ Kejutan",
+
+        photo:
+        "foto3.jpg",
+
+        text:
+        "Kalau suatu hari kamu membuka halaman ini lagi, ingat bahwa halaman ini pernah dibuat khusus untukmu."
     }
 
-});
+];
 
 
-/* =================================================
-   FOTO SLIDE
-================================================= */
+/* =====================================================
+   OPEN MEMORY
+===================================================== */
 
-let photoIndex = 0;
+function openMemory(index){
 
-const photos =
-document.querySelectorAll(".photoSlide");
+    const data =
+    memories[index];
 
-const dots =
-document.querySelectorAll(".dot");
+    document
+    .getElementById(
+        "modalPhoto"
+    ).src =
+    data.photo;
+
+    document
+    .getElementById(
+        "modalTitle"
+    ).textContent =
+    data.title;
+
+    document
+    .getElementById(
+        "modalText"
+    ).textContent =
+    data.text;
+
+    document
+    .getElementById(
+        "modal"
+    ).classList.add(
+        "active"
+    );
+
+}
 
 
-function nextPhoto(){
+/* =====================================================
+   CLOSE MEMORY
+===================================================== */
 
-    photos[photoIndex]
-    .classList.remove("active");
+function closeMemory(){
 
-    dots[photoIndex]
-    .classList.remove("active");
+    document
+    .getElementById(
+        "modal"
+    ).classList.remove(
+        "active"
+    );
 
-    photoIndex++;
+}
 
-    if(photoIndex >= photos.length){
 
-        photoIndex = 0;
+/* =====================================================
+   FINAL SLIDES
+===================================================== */
 
-        goTo("pelukPage");
+const finalSlides=[
+
+    {
+        word:
+        "AKU SAYANG KAMU ❤️",
+
+        text:
+        "Sesederhana itu. Aku sayang kamu dan ingin kamu selalu tahu itu."
+    },
+
+    {
+        word:
+        "JANGAN TINGGALIN AKU 🥺",
+
+        text:
+        "Kalau ada satu hal yang aku minta, tetaplah tinggal dan tetap jadi bagian dari ceritaku."
+    },
+
+    {
+        word:
+        "KAMU FAVORITKU 💕",
+
+        text:
+        "Dari banyaknya orang di dunia ini, kamu tetap punya tempat yang berbeda."
+    },
+
+    {
+        word:
+        "KAMU SELALU DI HATIKU 🌸",
+
+        text:
+        "Walaupun kita sedang berjauhan, kamu tetap menjadi bagian dari pikiranku."
+    },
+
+    {
+        word:
+        "TETAP BERSAMAKU YA ❤️",
+
+        text:
+        "Aku ingin membuat lebih banyak kenangan, lebih banyak cerita, dan lebih banyak hari bersamamu."
+    },
+
+    {
+        word:
+        "MY GIRL, I LOVE YOU 💗",
+
+        text:
+        "01 Oktober adalah hari kecil yang aku buat untuk mengingatkanmu betapa berartinya kamu."
+    },
+
+    {
+        word:
+        "SELAMAT MY GIRL DAY 🌹",
+
+        text:
+        "01 OKTOBER — MY GIRL. Semoga halaman kecil ini menjadi salah satu kenangan manis yang kamu simpan."
+    }
+
+];
+
+
+let currentSlide=0;
+
+let slideTimer;
+
+
+/* =====================================================
+   BUKA FINAL
+===================================================== */
+
+function openClosing(){
+
+    document
+    .getElementById(
+        "memoryPage"
+    )
+    .classList.remove(
+        "active"
+    );
+
+    document
+    .getElementById(
+        "closingPage"
+    )
+    .classList.add(
+        "active"
+    );
+
+    document
+    .getElementById(
+        "normalFinalContent"
+    )
+    .style.display="block";
+
+    document
+    .getElementById(
+        "lastPhoto"
+    )
+    .style.display="none";
+
+    currentSlide=0;
+
+    showFinalSlide();
+
+    clearInterval(slideTimer);
+
+    slideTimer=
+    setInterval(()=>{
+
+        nextSlide(true);
+
+    },3000);
+
+}
+
+
+/* =====================================================
+   SHOW SLIDE
+===================================================== */
+
+function showFinalSlide(){
+
+    const slide=
+    finalSlides[
+        currentSlide
+    ];
+
+    const word=
+    document.getElementById(
+        "shakeWord"
+    );
+
+    const text=
+    document.getElementById(
+        "finalText"
+    );
+
+    const number=
+    document.getElementById(
+        "slideNumber"
+    );
+
+    word.style.animation="none";
+
+    void word.offsetWidth;
+
+    word.style.animation=
+    "shakeWord .45s infinite";
+
+    word.textContent=
+    slide.word;
+
+    text.textContent=
+    slide.text;
+
+    number.textContent=
+    `${currentSlide+1} / ${finalSlides.length}`;
+
+
+    const dots=
+    document.getElementById(
+        "slideDots"
+    );
+
+    dots.innerHTML="";
+
+
+    finalSlides.forEach(
+        (_,index)=>{
+
+            const dot=
+            document.createElement(
+                "div"
+            );
+
+            dot.className=
+            "slide-dot";
+
+            if(
+                index ===
+                currentSlide
+            ){
+
+                dot.classList.add(
+                    "active"
+                );
+
+            }
+
+            dot.onclick=()=>{
+
+                currentSlide=
+                index;
+
+                showFinalSlide();
+
+                restartSlideTimer();
+
+            };
+
+            dots.appendChild(
+                dot
+            );
+
+        }
+    );
+
+}
+
+
+/* =====================================================
+   NEXT SLIDE
+===================================================== */
+
+function nextSlide(auto=false){
+
+    currentSlide++;
+
+    /*
+       Setelah slide ke-7,
+       tampilkan FOTO PENUTUP.
+    */
+
+    if(
+        currentSlide >=
+        finalSlides.length
+    ){
+
+        clearInterval(slideTimer);
+
+        document
+        .getElementById(
+            "normalFinalContent"
+        )
+        .style.display="none";
+
+        document
+        .getElementById(
+            "lastPhoto"
+        )
+        .style.display="block";
 
         return;
     }
 
-    photos[photoIndex]
-    .classList.add("active");
+    showFinalSlide();
 
-    dots[photoIndex]
-    .classList.add("active");
+    if(!auto){
+
+        restartSlideTimer();
+
+    }
 
 }
 
 
-/* =================================================
-   HATI OTOMATIS
-================================================= */
+/* =====================================================
+   PREVIOUS
+===================================================== */
 
-function createHeart(){
+function previousSlide(){
 
-    const heart =
-    document.createElement("div");
+    /*
+       Jika sedang di foto penutup,
+       kembali ke slide terakhir.
+    */
 
-    heart.className="bg-heart";
+    const lastPhoto =
+    document.getElementById(
+        "lastPhoto"
+    );
+
+    if(
+        lastPhoto.style.display ===
+        "block"
+    ){
+
+        lastPhoto.style.display=
+        "none";
+
+        document
+        .getElementById(
+            "normalFinalContent"
+        )
+        .style.display="block";
+
+        currentSlide=
+        finalSlides.length-1;
+
+        showFinalSlide();
+
+        restartSlideTimer();
+
+        return;
+    }
+
+
+    currentSlide--;
+
+    if(
+        currentSlide < 0
+    ){
+
+        currentSlide=
+        finalSlides.length-1;
+
+    }
+
+    showFinalSlide();
+
+    restartSlideTimer();
+
+}
+
+
+/* =====================================================
+   TIMER
+===================================================== */
+
+function restartSlideTimer(){
+
+    clearInterval(
+        slideTimer
+    );
+
+    slideTimer=
+    setInterval(()=>{
+
+        nextSlide(true);
+
+    },3000);
+
+}
+
+
+/* =====================================================
+   RESTART WEBSITE
+===================================================== */
+
+function restartWebsite(){
+
+    location.reload();
+
+}
+
+
+/* =====================================================
+   FLOATING HEART
+===================================================== */
+
+setInterval(()=>{
+
+    const heart=
+    document.createElement(
+        "div"
+    );
+
+    heart.className=
+    "heart";
 
     const list=[
+
         "❤️",
         "💕",
         "💗",
         "💖",
-        "💘",
-        "💞",
         "🌸",
-        "✨"
+        "🌷",
+        "🌹"
+
     ];
 
-    heart.innerHTML =
-    list[Math.floor(Math.random()*list.length)];
+    heart.textContent=
+    list[
+        Math.floor(
+            Math.random()*
+            list.length
+        )
+    ];
 
-    heart.style.left =
-    Math.random()*100+"vw";
+    heart.style.left=
+    Math.random()*100+
+    "vw";
 
-    heart.style.fontSize =
-    (15+Math.random()*30)+"px";
+    heart.style.fontSize=
+    (
+        15+
+        Math.random()*25
+    )+
+    "px";
 
-    heart.style.animationDuration =
-    (5+Math.random()*6)+"s";
+    heart.style.animationDuration=
+    (
+        6+
+        Math.random()*5
+    )+
+    "s";
 
-    document.body.appendChild(heart);
+    document.body.appendChild(
+        heart
+    );
 
     setTimeout(()=>{
+
         heart.remove();
-    },12000);
 
-}
+    },11000);
 
-setInterval(createHeart,450);
-
-
-/* =================================================
-   SWIPE HP
-================================================= */
-
-let touchStartX = 0;
-
-document.addEventListener("touchstart",function(e){
-
-    touchStartX =
-    e.changedTouches[0].screenX;
-
-});
+},650);
 
 
-document.addEventListener("touchend",function(e){
+/* =====================================================
+   FALLING FLOWER PETALS
+===================================================== */
 
-    let touchEndX =
-    e.changedTouches[0].screenX;
+setInterval(()=>{
 
-    let distance =
-    touchEndX-touchStartX;
+    const petal=
+    document.createElement(
+        "div"
+    );
 
-    if(
-        Math.abs(distance)>70 &&
-        currentPage.id === "fotoPage"
-    ){
+    petal.className=
+    "petal";
 
-        if(distance < 0){
+    const flowers=[
 
-            nextPhoto();
+        "🌸",
+        "🌷",
+        "💮",
+        "🌺"
+
+    ];
+
+    petal.textContent=
+    flowers[
+        Math.floor(
+            Math.random()*
+            flowers.length
+        )
+    ];
+
+    petal.style.left=
+    Math.random()*100+
+    "vw";
+
+    petal.style.fontSize=
+    (
+        15+
+        Math.random()*20
+    )+
+    "px";
+
+    petal.style.animationDuration=
+    (
+        6+
+        Math.random()*7
+    )+
+    "s";
+
+    document.body.appendChild(
+        petal
+    );
+
+    setTimeout(()=>{
+
+        petal.remove();
+
+    },14000);
+
+},850);
+
+
+/* =====================================================
+   TUTUP MODAL KLIK DI LUAR
+===================================================== */
+
+document
+.getElementById("modal")
+.addEventListener(
+    "click",
+    function(e){
+
+        if(
+            e.target === this
+        ){
+
+            closeMemory();
 
         }
 
     }
-
-});
+);
 
 </script>
 
 </body>
+
 </html>
 ```
